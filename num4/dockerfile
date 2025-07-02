@@ -1,0 +1,17 @@
+FROM python:3.12-slim
+
+RUN pip install --no-cache-dir flask
+
+WORKDIR /app
+
+# Копирование файлов
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app.py .
+
+# Открываем порт 5000
+EXPOSE 5000
+
+# Запуск Flask-приложения
+CMD ["python", "app.py"]
