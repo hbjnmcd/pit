@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  pong1:
+    build: .
+    environment:
+      - PONG_RESPONSE=Pong from 1!
+    ports:
+      - "5001:5000"
+
+  pong2:
+    build: .
+    environment:
+      - PONG_RESPONSE=Pong from 2!
+    ports:
+      - "5002:5000"
+
+  pong3:
+    build: .
+    environment:
+      - PONG_RESPONSE=Pong from 3!
+    ports:
+      - "5003:5000"
